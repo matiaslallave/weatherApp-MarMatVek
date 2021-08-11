@@ -4,13 +4,14 @@ import './App.css';
 
 function App() {
   return (
-  <div className="main-container">
+  <div className="main-containerApp">
+
       <div className="left-container">
        <SearchContainer></SearchContainer>
       </div>
 
       <div className="right-container">
-      <div className="header-container">
+      <div className="header-containerApp">
          <h2 className="title-weather">Weather</h2>
          <div className="button-container">
          <button className="button button-c">ºC</button>

@@ -1,4 +1,4 @@
-.main-container{
+.main-containerApp{
     display: flex;
     flex-direction: row;
     width: 65%;
@@ -18,9 +18,8 @@
     width: 100%;
 }
 
-/* solo escribo algo */
 
-.header-container{
+.header-containerApp{
     display:flex;
     flex-direction: row;
     justify-content: space-between;
