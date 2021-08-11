@@ -1,4 +1,5 @@
 import './App.css';
+import Highlights from './components/highlights';
 
 function App() {
   return (
