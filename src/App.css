@@ -1,9 +1,16 @@
+
 .main-containerApp{
     display: flex;
     flex-direction: row;
     width: 65%;
     margin: 50px auto 30px;
 
+}
+
+.header-containerApp{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .right-container{
@@ -19,9 +26,5 @@
 }
 
 
-.header-containerApp{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
+
 
