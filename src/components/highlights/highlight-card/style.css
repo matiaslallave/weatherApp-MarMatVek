@@ -1,0 +1,77 @@
+.uvIndexCard {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.windStatusCard {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.sunriseSunsetCard {
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+.humidityCard {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.visibilityCard {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.highlightCard {
+    background-color: #FFFFFF;
+    margin: 0.5rem;
+    border-radius: 19px;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cardTitle {
+    color: #CECECE;
+    font-size: 1rem;
+    padding: 0.2rem;
+}
+
+.cardData {
+    display: flex;
+    color: #1A1A1A;
+    font-size: 2rem;
+    padding: 2.2rem 0.2rem 2.2rem 0.2rem;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.cardDataUVIndex {
+    display: flex;
+    color: #1A1A1A;
+    font-size: 2rem;
+    padding: 0.2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardDataSunriseSunset {
+    display: flex;
+    color: #1A1A1A;
+    font-size: 1.1rem;
+    padding: 0.2rem;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.marginBottom {
+    margin-bottom: 2rem;
+}
+
+.details {
+    color: #1A1A1A;
+    font-size: 1rem;
+    padding: 0.2rem;
+}
+
