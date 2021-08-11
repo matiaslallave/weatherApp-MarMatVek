@@ -1,4 +1,4 @@
-.main-container{
+.main-containerApp{
     display: flex;
     flex-direction: row;
     width: 65%;
@@ -19,7 +19,7 @@
 }
 
 
-.header-container{
+.header-containerApp{
     display:flex;
     flex-direction: row;
     justify-content: space-between;
