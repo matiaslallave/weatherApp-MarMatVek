@@ -25,6 +25,7 @@ function App() {
         </p>
        </div>
        <div className="highlights">
+         <h2>Today's Highlights</h2>
         {/* Aqui va el componente de matias */}
         <p>Esto lo puse para probar los espacios,aquí irian las cards de matias.</p>
        </div>   
