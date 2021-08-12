@@ -5,6 +5,7 @@ import Highlights from './components/highlights';
 
 function App() {
   return (
+    
   <div className="main-containerApp">
 
       <div className="left-container">
@@ -13,7 +14,7 @@ function App() {
 
       <div className="right-container">
       <div className="header-containerApp">
-         <h2 className="title-weather">Weather</h2>
+         <h2 className="title-weather">Week</h2>
          <div className="button-container">
          <button className="button button-c">ºC</button>
          <button className="button button-f">ºF</button>
@@ -27,7 +28,7 @@ function App() {
        <div className="highlights">
          <h2>Today's Highlights</h2>
         {/* Aqui va el componente de matias */}
-        <p>Esto lo puse para probar los espacios,aquí irian las cards de matias.</p>
+       <Highlights></Highlights>
        </div>   
       </div>
       </div>

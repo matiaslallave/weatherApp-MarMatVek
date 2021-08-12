@@ -1,7 +1,15 @@
+.main-container-c1{
+    border-bottom-left-radius: 50%;
+}
+
 .search-container{
     width: 100%;
 }
 
 .img-weather{
     width: 15rem;
+}
+
+.input{
+    border: none;
 }
