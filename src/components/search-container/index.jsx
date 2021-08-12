@@ -8,7 +8,7 @@ return(
      <React.Fragment>
          <div className="main-container-c1">
          <div className="search-container">
-         <input placeholder="Search for places"></input>
+         <input className="input" type="text" placeholder= "&#x1F50E;&#xFE0E; Search for places..."/>
          </div>
          <img className="img-weather" src="https://www.kindpng.com/picc/m/553-5539135_cartoon-mostly-cloudy-weather-hd-png-download.png" alt="foto"/>
          <h2>12Cº</h2>

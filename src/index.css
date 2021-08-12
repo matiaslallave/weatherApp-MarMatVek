@@ -3,3 +3,17 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body{
+  background-color: #D6D7DB;
+  font-family: 'Roboto';
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: regular;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/Roboto/Roboto-Regular.ttf"); /*No se coloca la carpeta css al principio porque ya esta declarada en el style.css*/
+  
+}
