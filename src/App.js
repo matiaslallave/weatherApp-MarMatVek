@@ -1,4 +1,5 @@
 import SearchContainer from './components/search-container';
+import CardWeek from './components/days-week';
 import './App.css';
 import Highlights from './components/highlights';
 
@@ -21,13 +22,10 @@ function App() {
          </div>
       </div>  
       <div className="week-container">
-        {/* Aquí va el componente de marta */}
-        <p>Esto lo puse para probar los espacios, aquí irian las cards de marta.
-        </p>
+      <CardWeek></CardWeek>
        </div>
        <div className="highlights">
          <h2>Today's Highlights</h2>
-        {/* Aqui va el componente de matias */}
        <Highlights></Highlights>
        </div>   
       </div>
