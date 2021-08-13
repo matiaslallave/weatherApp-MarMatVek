@@ -1,7 +1,7 @@
 .main-containerApp{
     display: flex;
     flex-direction: row;
-    width: 90%;
+    width: 85%;
     margin: 1rem auto 1rem; 
     height: 90vh;
 }
@@ -25,7 +25,7 @@
 .left-container{
     display: flex;
     flex-direction: column;
-    width: 35%;
+    max-width: 35%;
     background-color: #FFFFFF;
     padding: 4% 3% 4%;
     border-top-left-radius: 35px;
