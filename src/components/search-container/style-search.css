@@ -30,7 +30,9 @@
 }
 
 .current__weather{
-    font-size: 4rem;
-    font-weight: lighter;
+  font-size: 61px;
+  font-size: 100;
+  color: #1a1a1a;
+  padding-bottom: 1rem;
 }
 
