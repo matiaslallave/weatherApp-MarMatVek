@@ -1,16 +1,15 @@
 import "./style.css";
-import HighlightsCard from "./highlight-card";
+import HighlightsCard from "../highlight-card";
 
-function Highlights() {
+function Highlights(props) {
   return (
     <div className="highlightsSection">
-      {/* <h3 className="highlightTitle">Today's Highlights</h3> */}
       <div className="highlightsContainer">
-        <HighlightsCard cardName="uvIndex"></HighlightsCard>
-        <HighlightsCard cardName="windStatus"></HighlightsCard>
-        <HighlightsCard cardName="sunriseSunset"></HighlightsCard>
-        <HighlightsCard cardName="humidity"></HighlightsCard>
-        <HighlightsCard cardName="visibility"></HighlightsCard>
+        <HighlightsCard cardName="uvIndex" highlightData={props.UVIndex}></HighlightsCard>
+        <HighlightsCard cardName="windStatus" highlightData= {props.windStatus}></HighlightsCard>
+        <HighlightsCard cardName="sunriseSunset" sunrise={props.sunrise} sunset={props.sunset}></HighlightsCard>
+        <HighlightsCard cardName="humidity" highlightData= {props.humidity} highlightDetails={props.humDetails}></HighlightsCard>
+        <HighlightsCard cardName="visibility" highlightData= {props.visibility} highlightDetails={props.visDetails}></HighlightsCard>
       </div>
     </div>
   );

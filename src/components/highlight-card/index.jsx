@@ -4,8 +4,6 @@ import "./style.css";
 function HighlightsCard(props) {
   let title = "";
   let setClass = "";
-  let data = "DATA";
-  let details = "details";
   let cardDataClass = "cardData";
 
   switch (props.cardName) {
@@ -40,16 +38,16 @@ function HighlightsCard(props) {
         <div className={`highlightCard ${setClass}`}>
           <div className="cardTitle">{title}</div>
           <div className="cardDataSunriseSunset">
-            <div className="marginBottom">6:35 AM</div>
-            <div>5:42 PM</div>
+            <div className="marginBottom">{props.sunrise}</div>
+            <div>{props.sunset}</div>
           </div>
-          <div className="details">{details}</div>
+          <div className="details">{props.highlightDetails}</div>
         </div>
       ) : (
         <div className={`highlightCard ${setClass}`}>
           <div className="cardTitle">{title}</div>
-          <div className={cardDataClass}>{data}</div>
-          <div className="details">{details}</div>
+          <div className={cardDataClass}>{props.highlightData}</div>
+          <div className="details">{props.highlightDetails}</div>
         </div>
       )}
     </React.Fragment>
