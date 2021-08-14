@@ -1,6 +1,6 @@
 import "./style.css";
 
-function WeekItem(props) {
+function WeekWeatherCard(props) {
   return (
     <div className="main-container-week">
       <h4 className="name-day">{props.nameDay}</h4>
@@ -16,4 +16,4 @@ function WeekItem(props) {
   );
 }
 
-export default WeekItem;
+export default WeekWeatherCard;

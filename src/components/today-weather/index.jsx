@@ -11,7 +11,7 @@ function TodayWeather(props) {
       </h5>
       <div className="parrafos-weather">
         <p>{props.currentDescription}</p>
-        <p>Rain, {props.currentRainProb}</p>
+        <p>Rain - {props.currentRainProb}%</p>
       </div>
     </React.Fragment>
   );
