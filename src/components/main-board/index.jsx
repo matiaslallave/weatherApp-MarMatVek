@@ -6,13 +6,14 @@ import LocationSearchingIcon from "@material-ui/icons/LocationSearching";
 import { useState } from "react";
 import { useEffect } from "react";
 import { APIKey } from "../../APIKey";
+import { currentDay } from "../../aux-functions";
 
 function MainBoard() {
-  const imgURL = "https://image.flaticon.com/icons/png/512/106/106059.png";
   const currentImgURL =
     "https://www.kindpng.com/picc/m/553-5539135_cartoon-mostly-cloudy-weather-hd-png-download.png";
 
   const [coord, setCoord] = useState({});
+  const [weekForecast, setWeekForecast] = useState([]);
   const [currentLocation, setCurrentLocation] = useState({
     current: {
       dt: 0,
@@ -48,6 +49,8 @@ function MainBoard() {
       .then((res) => res.json())
       .then((data) => {
         setCurrentLocation(data);
+        data.daily.pop();
+        setWeekForecast(data.daily);
       });
   };
 
@@ -76,13 +79,7 @@ function MainBoard() {
 
     return formattedTime;
   };
-
-  const currentDay = (dt) => {
-    return new Intl.DateTimeFormat("en-US", { weekday: "long" }).format(
-      new Date(dt * 1000)
-    );
-  };
-
+  
   return (
     <div className="main-containerApp">
       <div className="left-container">
@@ -122,11 +119,7 @@ function MainBoard() {
           </div>
         </div>
         <div className="week-container">
-          <WeekWeather
-            highestTemp="31º"
-            lowestTemp="-4º"
-            imgURL={imgURL}
-          ></WeekWeather>
+          <WeekWeather weekForecast={weekForecast}></WeekWeather>
         </div>
         <div className="highlights">
           <h2 className="title-highligth">Today's Highlights</h2>
