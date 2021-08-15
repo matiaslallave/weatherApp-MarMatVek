@@ -38,7 +38,7 @@
     text-decoration: underline;
 }
 
-button{
+.button-C-F{
     background-color: black;
     border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -84,8 +84,16 @@ button{
     font-size: 15px;
 }
 
+.invisible{
+    opacity: 0;
+}
 
 .week-container{
     margin-top: 2%;
     margin-bottom: 2%;
+}
+
+.no-button{
+    border-style: none;
+    background-color: #F7F6F9;
 }
