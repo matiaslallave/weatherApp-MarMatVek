@@ -4,6 +4,7 @@ import "./style.css"
 function TodayWeather(props) {
   return (
     <React.Fragment>
+      <h4>{props.cityName}</h4>
       <img className="img-weather" src={props.currentImgURL} alt="foto" />
       <h2 className="current__weather">{props.currentTemp}</h2>
       <h5>
