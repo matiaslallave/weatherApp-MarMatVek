@@ -79,7 +79,7 @@ function MainBoard() {
 
     return formattedTime;
   };
-
+  
   return (
     <div className="main-containerApp">
       <div className="left-container">
