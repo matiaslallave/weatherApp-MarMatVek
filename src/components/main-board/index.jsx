@@ -129,7 +129,7 @@ function MainBoard() {
           ></WeekWeather>
         </div>
         <div className="highlights">
-          <h2>Today's Highlights</h2>
+          <h2 className="title-highligth">Today's Highlights</h2>
           <Highlights
             UVIndex={currentLocation.current.uvi}
             windStatus={`${(currentLocation.current.wind_speed / 3.6).toFixed(

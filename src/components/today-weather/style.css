@@ -1,11 +1,11 @@
 .img-weather{
-    width: 15rem;
-    margin-top: 25px;
+    width: 11rem;
+    margin-top: 49px;
 }
 
 .current__weather{
     font-size: 61px;
-    font-size: 100;
     color: #1a1a1a;
-    padding-bottom: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }

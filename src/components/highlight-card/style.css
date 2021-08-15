@@ -1,4 +1,4 @@
-.uvIndexCard {
+/* .uvIndexCard {
     grid-area: 1 / 1 / 2 / 2;
 }
 
@@ -16,9 +16,9 @@
 
 .visibilityCard {
     grid-area: 2 / 2 / 3 / 3;
-}
+} */
 
-.highlightCard {
+/* .highlightCard {
     background-color: #FFFFFF;
     margin: 0.5rem;
     border-radius: 19px;
@@ -27,7 +27,16 @@
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
+} */
+
+.highlightCard {
+    padding: 2% 2%;
+    border-radius: 19px;
+    background-color: #FFFFFF;
+    min-width: 28.5%;
+    margin: 1%;
 }
+
 
 .cardTitle {
     color: #CECECE;
@@ -38,17 +47,15 @@
 .cardData {
     display: flex;
     color: #1A1A1A;
-    font-size: 2rem;
-    padding: 2.2rem 0.2rem 2.2rem 0.2rem;
-    align-items: center;
-    justify-content: flex-start;
+    font-size: 21px;
+    padding: 16% 18%;
 }
 
 .cardDataUVIndex {
     display: flex;
     color: #1A1A1A;
-    font-size: 2rem;
-    padding: 0.2rem;
+    font-size: 23px;
+    padding: 16%;
     align-items: center;
     justify-content: center;
 }
@@ -56,17 +63,14 @@
 .cardDataSunriseSunset {
     display: flex;
     color: #1A1A1A;
-    font-size: 1.1rem;
-    padding: 0.2rem;
+    font-size: 14px;
+    padding: 7%;
     align-items: center;
-    justify-content: space-between;
     flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
 }
 
 .marginBottom {
-    margin-bottom: 2rem;
+    margin-bottom: 14%;
 }
 
 .details {

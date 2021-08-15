@@ -1,14 +1,15 @@
 .main-containerApp{
     display: flex;
     flex-direction: row;
-    width: 85%;
-    margin: 1rem auto 1rem; 
-    height: 90vh;
+    justify-content: center;
+    margin: 3% auto 2%;
+    vertical-align: middle;
+    width: 65%;
 }
 
 .header-containerApp{
-    display:flex;
-    flex-direction: row;
+    width: 90%;
+    display: flex;
     justify-content: space-between;
 }
 
@@ -17,17 +18,18 @@
     flex-direction: column;
     width: 100%;
     background-color: #F7F6F9;
-    padding: 4% 3% 4%;
+    padding: 3% 3% 3%;
     border-top-right-radius: 35px;
     border-bottom-right-radius: 35px;
+
 }
 
 .left-container{
     display: flex;
     flex-direction: column;
-    max-width: 35%;
+    max-width: 30%;
     background-color: #FFFFFF;
-    padding: 4% 3% 4%;
+    padding: 3% 3% 3%;
     border-top-left-radius: 35px;
     border-bottom-left-radius: 35px;
 }
@@ -45,8 +47,12 @@ button{
     -o-border-radius: 50%;
     padding: 5px;
     color: white;
-    margin: 0 5px; 
+    margin: 0 0.1%; 
 
+}
+
+.button-container{
+    display: flex;
 }
 
 .main-container-c1{
@@ -56,24 +62,30 @@ button{
 .search-container{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-self: baseline;
+    
 }
 
 .input{
     border: none;
-    margin-bottom: 10px;
 }
 
 .icon-location{
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    background-color: #F7F6F9;
-    font-size: 10px;
-    padding: 3px;
+   font-size: 30px; 
+   font-size: 30px;
+   height: 14px;  
+   padding-top: 2px;
+   padding-left: 1.2px;
+}
+
+.title-highligth{
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 15px;
 }
 
 
-
+.week-container{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
