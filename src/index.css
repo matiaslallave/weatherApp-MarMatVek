@@ -7,13 +7,14 @@
 @font-face {
   font-family: 'Roboto';
   font-weight: '100';
-  src: url("./fonts/Roboto/Roboto-Thin.ttf"); /*No se coloca la carpeta css al principio porque ya esta declarada en el style.css*/ 
+  src: url("./fonts/Roboto/Roboto-Thin.ttf") /*No se coloca la carpeta css al principio porque ya esta declarada en el style.css*/ 
 }
+
+
 
 body{
   background-color: #D6D7DB;
   font-family: 'Roboto', sans-serif;
-  margin: 2rem 3rem;
 }
 
 

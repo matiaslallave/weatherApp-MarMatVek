@@ -1,15 +1,22 @@
-.highlightsContainer {
+/* .highlightsContainer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     padding: 0.5rem;
-}
+} */
 
 .highlightTitle {
     color: #1A1A1A;
     font-size: 1.3rem;
 }
 
-.highlightsSection{
-    padding: 0.9rem;
+/* .highlightsContainer {
+    display: flex;
+    flex-direction: row;
+} */
+
+.highlightsContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }

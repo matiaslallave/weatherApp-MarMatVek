@@ -48,7 +48,7 @@ function MainBoard() {
           ></WeekWeather>
         </div>
         <div className="highlights">
-          <h2>Today's Highlights</h2>
+          <h2 className="title-highligth">Today's Highlights</h2>
           <Highlights
             UVIndex="7"
             windStatus="7.70 km/h"
