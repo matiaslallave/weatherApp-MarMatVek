@@ -77,9 +77,9 @@ function MainBoard() {
     return formattedTime;
   };
 
-  const currentDay = () => {
+  const currentDay = (dt) => {
     return new Intl.DateTimeFormat("en-US", { weekday: "long" }).format(
-      new Date(currentLocation.current.dt * 1000)
+      new Date(dt * 1000)
     );
   };
 
@@ -101,7 +101,7 @@ function MainBoard() {
           currentTemp={`${currentLocation.current.temp.toFixed(
             1
           )}${formatDegr}`}
-          currentDay={currentDay()}
+          currentDay={currentDay(currentLocation.current.dt)}
           currentTime={realTimeClock(currentLocation.current.dt)}
           currentDescription={
             currentLocation.current.weather[0].description
