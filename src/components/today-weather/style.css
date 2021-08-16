@@ -49,3 +49,7 @@ hr {
 .current__day_location{
     padding: 5px 0 20px;
 }
+
+.time-color{
+  color: #CECECE;
+}

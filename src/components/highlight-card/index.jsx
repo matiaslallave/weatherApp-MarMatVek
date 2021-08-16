@@ -32,7 +32,6 @@ function HighlightsCard(props) {
       break;
   }
 
-
   return (
     <React.Fragment>
       {props.cardName === "sunriseSunset" ? (
