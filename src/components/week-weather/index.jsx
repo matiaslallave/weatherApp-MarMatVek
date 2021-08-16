@@ -4,6 +4,7 @@ import "./style.css";
 import { currentDayShort } from "../../aux-functions";
 
 function WeekWeather(props) {
+
   return (
     <div className="week-main-container">
       {props.weekForecast.map((v) => (

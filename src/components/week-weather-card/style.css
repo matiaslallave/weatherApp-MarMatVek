@@ -1,13 +1,13 @@
 .main-container-week{
-    padding: 1% 2%;
-    border-radius: 15px;
+    padding: 2% 1%;
+    border-radius: 12px;
     background-color: #FFFFFF;
     min-width: 12%;
-    margin: 0.5%;
+    margin: 0.9%;
 }
 
 .name-day{
-    font-size: 16px;
+    font-size: 70%;
     color:#1A1A1A;
     padding-bottom: 5px;
 }
@@ -18,11 +18,11 @@
 }
 
 .high-temp{
-    font-size: 13px;
-    color:#1A1A1A;
+    font-size: 70%;
+    color: #1A1A1A;
 }
 
 .low-temp{
-    font-size: 13px;
+    font-size: 80%;
     color:#CECECE;
 }

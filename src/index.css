@@ -10,11 +10,21 @@
   src: url("./fonts/Roboto/Roboto-Thin.ttf") /*No se coloca la carpeta css al principio porque ya esta declarada en el style.css*/ 
 }
 
+@font-face {
+  font-family: 'Roboto';
+  font-weight: normal;
+  src: url("./fonts/Roboto/Roboto-Regular.ttf") /*No se coloca la carpeta css al principio porque ya esta declarada en el style.css*/ 
+}
 
+@font-face {
+  font-family: 'Roboto';
+  font-weight: bold;
+  src: url("./fonts/Roboto/Roboto-Bold.ttf") /*No se coloca la carpeta css al principio porque ya esta declarada en el style.css*/ 
+}
 
 body{
-  background-color: #D6D7DB;
   font-family: 'Roboto', sans-serif;
+  font-weight: 100;
 }
 
 

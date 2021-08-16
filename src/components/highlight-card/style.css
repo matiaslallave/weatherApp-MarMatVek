@@ -33,22 +33,23 @@
     padding: 2% 2%;
     border-radius: 19px;
     background-color: #FFFFFF;
-    min-width: 28.5%;
+    min-width: 30.5%;
     margin: 1%;
 }
 
 
 .cardTitle {
     color: #CECECE;
-    font-size: 1rem;
-    padding: 0.2rem;
+    font-size: 75%;
+    padding: 2%;
 }
 
 .cardData {
     display: flex;
     color: #1A1A1A;
-    font-size: 21px;
+    font-size: 18px;
     padding: 16% 18%;
+    font-weight: bold;
 }
 
 .cardDataUVIndex {
@@ -58,6 +59,7 @@
     padding: 16%;
     align-items: center;
     justify-content: center;
+    font-weight: bold;
 }
 
 .cardDataSunriseSunset {
@@ -67,6 +69,7 @@
     padding: 7%;
     align-items: center;
     flex-direction: column;
+    font-weight: bold;
 }
 
 .marginBottom {
@@ -75,7 +78,7 @@
 
 .details {
     color: #1A1A1A;
-    font-size: 1rem;
-    padding: 0.2rem;
+    font-size: 70%;
+    padding: 2%;
 }
 
