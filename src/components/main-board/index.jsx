@@ -44,8 +44,7 @@ function MainBoard() {
   const [formatDegr, setFormatDegr] = useState("°C");
   const [windSpeed, setWindSpeed] = useState(0);
   const [faren, setFaren] = useState(false);
-  const [classButtonFaren, setClassButtonFaren] = useState("button-unclicked");
-  const [classButtonCels, setClassButtonCels] = useState("button-clicked");
+
 
 
   const searchRef = useRef();
@@ -129,8 +128,6 @@ function MainBoard() {
   };
 
   const handleClickFarenheit = () => {
-    setClassButtonFaren("button-clicked")
-    setClassButtonCels("button-unclicked")
     const auxFaren = true;
     setFaren(true);
     const auxMeasurement = "imperial";
@@ -140,8 +137,6 @@ function MainBoard() {
   };
 
   const handleClickCelsius = () => {
-    setClassButtonFaren("button-unclicked")
-    setClassButtonCels("button-clicked")
     const auxFaren = false;
     setFaren(false);
     const auxMeasurement = "metric";
@@ -165,7 +160,7 @@ function MainBoard() {
               <input className="invisible" type="submit"></input>
             </form>
             <button className="no-button" onClick={getGeolocation}>
-              <LocationSearchingIcon className="icon-location"></LocationSearchingIcon>
+              <LocationSearchingIcon fontSize='small' className="icon-location"></LocationSearchingIcon>
             </button>
           </div>
         </div>
@@ -199,10 +194,10 @@ function MainBoard() {
             <strong>Week</strong>
           </h2>
           <div className="button-container">
-            <button className={`button-C-F ${classButtonCels}`} onClick={handleClickCelsius}>
+          <button className="button-C-F selected no-selected target focus"  onClick={handleClickCelsius} >
               °C
             </button>
-            <button className={`button-C-F ${classButtonFaren}`} onClick={handleClickFarenheit}>
+            <button className="button-C-F selected  no-selected target focus" onClick={handleClickFarenheit}>
               °F
             </button>
           </div>

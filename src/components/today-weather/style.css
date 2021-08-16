@@ -30,7 +30,8 @@
 .f-p {
   display: flex;
   flex-direction: row;
-  padding-bottom: 18px;
+  padding-bottom: 10%;
+  padding-top: 16%;
 }
 
 .s-p {
