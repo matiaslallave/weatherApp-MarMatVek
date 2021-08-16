@@ -41,7 +41,7 @@ function MainBoard() {
     ],
   });
   const [measurement, setMeasurement] = useState("metric");
-  const [formatDegr, setFormatDegr] = useState(" º");
+  const [formatDegr, setFormatDegr] = useState(" °C");
 
   const searchRef = useRef();
 
@@ -150,12 +150,12 @@ function MainBoard() {
         <div className="header-containerApp">
           <h2 className="title-weather"><strong>Week</strong></h2>
           <div className="button-container">
-            <button className="button-C-F">ºC</button>
-            <button className="button-C-F">ºF</button>
+            <button className="button-C-F">°C</button>
+            <button className="button-C-F">°F</button>
           </div>
         </div>
         <div className="week-container">
-          <WeekWeather weekForecast={weekForecast}></WeekWeather>
+          <WeekWeather weekForecast={weekForecast} formatDegr= {formatDegr}></WeekWeather>
         </div>
         <div className="highlights">
           <h2 className="title-highligth">Today's Highlights</h2>

@@ -12,6 +12,7 @@ function WeekWeather(props) {
               weekDay={currentDayShort(v.dt)}
               highestTemp={v.temp.max.toFixed(0)}
               lowestTemp={v.temp.min.toFixed(0)}
+              formatDegr={props.formatDegr}
               imgURL={`https://openweathermap.org/img/wn/${v.weather[0].icon}@2x.png`}
             ></WeekWeatherCard>
           ))}
