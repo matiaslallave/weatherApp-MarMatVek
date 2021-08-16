@@ -11,11 +11,11 @@ function Highlights(props) {
 
   let visDetails = "";
 
-  if (props.visibility <= 5000) visDetails = "Restricted 😑";
+  if (props.visibility <= 5000) visDetails = "Restricted 😠";
   if (props.visibility > 5000 && props.visibility <= 10000)
-    visDetails = "Medium 🧐";
+    visDetails = "Medium 🤔";
   if (props.visibility > 10000 && props.visibility <= 15000)
-    visDetails = "Good 👀";
+    visDetails = "Good 😎";
   if (props.visibility > 15000) visDetails = "Perfect ⭐️";
 
   return (

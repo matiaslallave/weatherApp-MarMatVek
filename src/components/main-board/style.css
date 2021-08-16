@@ -72,16 +72,16 @@
 }
 
 .input{
-    margin-top: 8%;
     border: none;
 }
 
 .icon-location{
-   font-size: 30px; 
+   font-size: 30px;
    width: 1em;
    height: 1em;
    padding-top: 2px;
    padding-left: 1.2px;
+ 
 }
 
 .title-highligth{
@@ -102,4 +102,33 @@
 .no-button{
     border-style: none;
     background-color: #F7F6F9;
+    border-radius: 50%;
+    height: 22px;
+    margin-left: 3%;
 }
+
+.no-selected{
+    background-color: #FFFFFF;
+    color:#1A1A1A;
+}
+
+.selected:active{
+    background-color:#1A1A1A;
+    color:#FFFFFF;
+}
+
+.selected:hover{
+    background-color:#1A1A1A;
+    color:#FFFFFF;
+}
+
+
+:target{
+    background-color:#1A1A1A;
+    color:#FFFFFF;
+}
+
+.selected:focus {
+    background-color:#1A1A1A;
+    color:#FFFFFF;
+  }
