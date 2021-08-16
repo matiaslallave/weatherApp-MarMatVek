@@ -10,9 +10,6 @@ import { currentDay } from "../../aux-functions";
 import { useRef } from "react";
 
 function MainBoard() {
-  const currentImgURL =
-    "https://www.kindpng.com/picc/m/553-5539135_cartoon-mostly-cloudy-weather-hd-png-download.png";
-
   const [cityName, setCityName] = useState("Loading...");
   const [coord, setCoord] = useState();
   const [weekForecast, setWeekForecast] = useState([]);
@@ -42,7 +39,7 @@ function MainBoard() {
     ],
   });
   const [measurement, setMeasurement] = useState("metric");
-  const [formatDegr, setFormatDegr] = useState(" º");
+  const [formatDegr, setFormatDegr] = useState(" °C");
 
   const searchRef = useRef();
 
@@ -129,7 +126,7 @@ function MainBoard() {
         </div>
         <TodayWeather
           cityName={cityName}
-          currentImgURL={currentImgURL}
+          currentImgURL={`https://openweathermap.org/img/wn/${currentLocation.current.weather[0].icon}@4x.png`}
           currentTemp={`${currentLocation.current.temp.toFixed(
             1
           )}${formatDegr}`}
@@ -149,12 +146,12 @@ function MainBoard() {
         <div className="header-containerApp">
           <h2 className="title-weather">Week</h2>
           <div className="button-container">
-            <button className="button-C-F">ºC</button>
-            <button className="button-C-F">ºF</button>
+            <button className="button-C-F">°C</button>
+            <button className="button-C-F">°F</button>
           </div>
         </div>
         <div className="week-container">
-          <WeekWeather weekForecast={weekForecast}></WeekWeather>
+          <WeekWeather weekForecast={weekForecast} formatDegr= {formatDegr}></WeekWeather>
         </div>
         <div className="highlights">
           <h2 className="title-highligth">Today's Highlights</h2>

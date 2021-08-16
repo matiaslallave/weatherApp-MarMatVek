@@ -10,7 +10,7 @@ function WeekWeatherCard(props) {
         alt="img-weather"
       />
       <p className="high-temp">
-        {props.highestTemp} <span className="low-temp">/ {props.lowestTemp}</span>
+        {props.highestTemp}{props.formatDegr} <span className="low-temp">/ {props.lowestTemp}{props.formatDegr}</span>
       </p>
     </div>
   );
