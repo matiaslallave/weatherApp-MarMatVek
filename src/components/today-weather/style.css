@@ -1,11 +1,51 @@
-.img-weather{
-    width: 11rem;
-    margin-top: 49px;
+.img-weather {
+  width: 85%;
+  margin-top: 10px;
 }
 
-.current__weather{
-    font-size: 61px;
-    color: #1a1a1a;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
+.current__weather {
+  font-size: 50px;
+  color: #1a1a1a;
+  margin-top: 2%;
+  margin-bottom: 8%;
+  font-weight: 100;
+}
+
+.cloudy-img {
+  width: 5%;
+  height: 3%;
+}
+
+.rain-img {
+  width: 5%;
+  height: 3%;
+}
+
+.parrafos-weather {
+  display: flex;
+  flex-direction: column;
+  font-size: 70%;
+}
+
+.f-p {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 18px;
+}
+
+.s-p {
+  display: flex;
+  flex-direction: row;
+}
+
+hr {
+    width: 90%;
+    border: 0;
+    height: 1px;
+    background: rgb(182, 182, 182);
+    opacity: 0.2;
+}
+
+.current__day_location{
+    padding: 5px 0 20px;
+}

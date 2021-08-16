@@ -2,15 +2,19 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 3% auto 2%;
+    margin: 1% auto 1%;
     vertical-align: middle;
-    width: 65%;
+    width: 67%;
+    padding: 40px;
+    background-color: #D6D7DB;
 }
 
 .header-containerApp{
-    width: 90%;
+    width: 85%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1%;
 }
 
 .right-container{
@@ -18,7 +22,7 @@
     flex-direction: column;
     width: 100%;
     background-color: #F7F6F9;
-    padding: 3% 3% 3%;
+    padding: 3% 4% 3%;
     border-top-right-radius: 35px;
     border-bottom-right-radius: 35px;
 
@@ -27,7 +31,7 @@
 .left-container{
     display: flex;
     flex-direction: column;
-    max-width: 30%;
+    max-width: 100%;
     background-color: #FFFFFF;
     padding: 3% 3% 3%;
     border-top-left-radius: 35px;
@@ -36,6 +40,7 @@
 
 .title-weather{
     text-decoration: underline;
+    font-size: 14px;
 }
 
 .button-C-F{
@@ -47,7 +52,8 @@
     -o-border-radius: 50%;
     padding: 5px;
     color: white;
-    margin: 0 0.1%; 
+    border: none;
+    margin-right: 18.8%;
 
 }
 
@@ -67,21 +73,22 @@
 }
 
 .input{
+    margin-top: 8%;
     border: none;
 }
 
 .icon-location{
    font-size: 30px; 
-   font-size: 30px;
-   height: 14px;  
+   width: 1em;
+   height: 1em;
    padding-top: 2px;
    padding-left: 1.2px;
 }
 
 .title-highligth{
     margin-bottom: 10px;
-    font-weight: 400;
-    font-size: 15px;
+    font-weight: bold;
+    font-size: 14px;
 }
 
 .invisible{
@@ -96,4 +103,5 @@
 .no-button{
     border-style: none;
     background-color: #F7F6F9;
+   
 }

@@ -6,12 +6,11 @@ import LocationSearchingIcon from "@material-ui/icons/LocationSearching";
 import { useState } from "react";
 import { useEffect } from "react";
 import { APIKey } from "../../APIKey";
-import { currentDay } from "../../aux-functions";
+import { currentDayLong } from "../../aux-functions";
 import { useRef } from "react";
 
 function MainBoard() {
-  const currentImgURL =
-    "https://www.kindpng.com/picc/m/553-5539135_cartoon-mostly-cloudy-weather-hd-png-download.png";
+
 
   const [cityName, setCityName] = useState("Loading...");
   const [coord, setCoord] = useState();
@@ -108,6 +107,8 @@ function MainBoard() {
     searchRef.current.value = "";
   };
 
+   
+
   return (
     <div className="main-containerApp">
       <div className="left-container">
@@ -129,11 +130,11 @@ function MainBoard() {
         </div>
         <TodayWeather
           cityName={cityName}
-          currentImgURL={currentImgURL}
+          currentImgURL= {`https://openweathermap.org/img/wn/${currentLocation.current.weather[0].icon}@4x.png`}
           currentTemp={`${currentLocation.current.temp.toFixed(
             1
           )}${formatDegr}`}
-          currentDay={currentDay(currentLocation.current.dt)}
+          currentDay={currentDayLong(currentLocation.current.dt)}
           currentTime={realTimeClock(currentLocation.current.dt)}
           currentDescription={
             currentLocation.current.weather[0].description
@@ -147,7 +148,7 @@ function MainBoard() {
 
       <div className="right-container">
         <div className="header-containerApp">
-          <h2 className="title-weather">Week</h2>
+          <h2 className="title-weather"><strong>Week</strong></h2>
           <div className="button-container">
             <button className="button-C-F">ºC</button>
             <button className="button-C-F">ºF</button>
@@ -167,8 +168,8 @@ function MainBoard() {
             sunset={realTimeClock(currentLocation.current.sunset)}
             humidity={`${currentLocation.current.humidity} %`}
             visibility={`${currentLocation.current.visibility / 1000} km`}
-            humDetails="Normal"
-            visDetails="Average"
+            humDetails='Normal 🤙' //Tengo que pasar una prop
+            visDetails='Average 🥺' //Tengo que pasar una prop
           ></Highlights>
         </div>
       </div>
