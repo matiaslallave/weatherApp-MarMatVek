@@ -10,12 +10,12 @@ import { currentDayLong } from "../../aux-functions";
 import { useRef } from "react";
 
 function MainBoard() {
-
-
+  const [lonState, setLonState] = useState();
+  const [latState, setLatState] = useState();
   const [cityName, setCityName] = useState("Loading...");
-  const [coord, setCoord] = useState();
   const [weekForecast, setWeekForecast] = useState([]);
   const [currentLocation, setCurrentLocation] = useState({
+    timezone_offset: 0,
     current: {
       dt: 0,
       temp: 0,
@@ -41,19 +41,29 @@ function MainBoard() {
     ],
   });
   const [measurement, setMeasurement] = useState("metric");
-  const [formatDegr, setFormatDegr] = useState(" °C");
+  const [formatDegr, setFormatDegr] = useState("°C");
+  const [windSpeed, setWindSpeed] = useState(0);
+  const [faren, setFaren] = useState(false);
 
   const searchRef = useRef();
 
-  const getLocationByCoords = (lon, lat) => {
+  const getLocationByCoords = (lon, lat, measurement, faren) => {
     fetch(
       `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=${measurement}&exclude=alerts,minutely&appid=${APIKey}`
     )
       .then((res) => res.json())
       .then((data) => {
-        setCurrentLocation(data);
-        data.daily.pop();
-        setWeekForecast(data.daily);
+        if (faren) {
+          setCurrentLocation(data);
+          data.daily.pop();
+          setWeekForecast(data.daily);
+          setWindSpeed(fromMilesPerHourtoKMH(data.current.wind_speed));
+        } else {
+          setCurrentLocation(data);
+          data.daily.pop();
+          setWeekForecast(data.daily);
+          setWindSpeed(fromMetresPerSectoKMH(data.current.wind_speed));
+        }
       });
   };
 
@@ -63,8 +73,10 @@ function MainBoard() {
     navigator.geolocation.getCurrentPosition((pos) => {
       auxLat = pos.coords.latitude;
       auxLon = pos.coords.longitude;
-      getLocationByCoords(auxLon, auxLat);
-      setCityName('Your location');
+      getLocationByCoords(auxLon, auxLat, measurement, faren);
+      setCityName("Your location");
+      setLonState(auxLon);
+      setLatState(auxLat);
     });
   };
 
@@ -72,12 +84,16 @@ function MainBoard() {
     getGeolocation();
   }, []);
 
-  // useEffect(() => {
-  //   getLocationByCoords(coord?.lon, coord?.lat);
-  // }, [coord]);
+  const fromMilesPerHourtoKMH = (speed) => {
+    return speed * 1.609;
+  };
 
-  const realTimeClock = (dt) => {
-    let date = new Date(dt * 1000);
+  const fromMetresPerSectoKMH = (speed) => {
+    return speed * 3.6;
+  };
+
+  const realTimeClock = (dt, tz) => {
+    let date = new Date((dt + tz) * 1000 - 7200000);
 
     let hours = date.getHours();
 
@@ -102,12 +118,30 @@ function MainBoard() {
       .then((data) => {
         let auxLon = data.coord.lon;
         let auxLat = data.coord.lat;
-        getLocationByCoords(auxLon, auxLat);
+        getLocationByCoords(auxLon, auxLat, measurement, faren);
+        setLonState(auxLon);
+        setLatState(auxLat);
       });
     searchRef.current.value = "";
   };
 
-   
+  const handleClickFarenheit = () => {
+    const auxFaren = true;
+    setFaren(true);
+    const auxMeasurement = "imperial";
+    setMeasurement(auxMeasurement);
+    setFormatDegr("°F");
+    getLocationByCoords(lonState, latState, auxMeasurement, auxFaren);
+  };
+
+  const handleClickCelsius = () => {
+    const auxFaren = false;
+    setFaren(false);
+    const auxMeasurement = "metric";
+    setMeasurement(auxMeasurement);
+    setFormatDegr("°C");
+    getLocationByCoords(lonState, latState, auxMeasurement, auxFaren);
+  };
 
   return (
     <div className="main-containerApp">
@@ -130,12 +164,18 @@ function MainBoard() {
         </div>
         <TodayWeather
           cityName={cityName}
-          currentImgURL= {`https://openweathermap.org/img/wn/${currentLocation.current.weather[0].icon}@4x.png`}
+          currentImgURL={`https://openweathermap.org/img/wn/${currentLocation.current.weather[0].icon}@4x.png`}
           currentTemp={`${currentLocation.current.temp.toFixed(
-            1
+            0
           )}${formatDegr}`}
-          currentDay={currentDayLong(currentLocation.current.dt)}
-          currentTime={realTimeClock(currentLocation.current.dt)}
+          currentDay={currentDayLong(
+            currentLocation.current.dt,
+            currentLocation.timezone_offset
+          )}
+          currentTime={realTimeClock(
+            currentLocation.current.dt,
+            currentLocation.timezone_offset
+          )}
           currentDescription={
             currentLocation.current.weather[0].description
               .charAt(0)
@@ -148,28 +188,40 @@ function MainBoard() {
 
       <div className="right-container">
         <div className="header-containerApp">
-          <h2 className="title-weather"><strong>Week</strong></h2>
+          <h2 className="title-weather">
+            <strong>Week</strong>
+          </h2>
           <div className="button-container">
-            <button className="button-C-F">°C</button>
-            <button className="button-C-F">°F</button>
+            <button className="button-C-F" onClick={handleClickCelsius}>
+              °C
+            </button>
+            <button className="button-C-F" onClick={handleClickFarenheit}>
+              °F
+            </button>
           </div>
         </div>
         <div className="week-container">
-          <WeekWeather weekForecast={weekForecast} formatDegr= {formatDegr}></WeekWeather>
+          <WeekWeather
+            weekForecast={weekForecast}
+            formatDegr={formatDegr}
+            weekTimezone={currentLocation.timezone_offset}
+          ></WeekWeather>
         </div>
         <div className="highlights">
           <h2 className="title-highligth">Today's Highlights</h2>
           <Highlights
             UVIndex={currentLocation.current.uvi}
-            windStatus={`${(currentLocation.current.wind_speed * 3.6).toFixed(
-              2
-            )} km/h`}
-            sunrise={realTimeClock(currentLocation.current.sunrise)}
-            sunset={realTimeClock(currentLocation.current.sunset)}
-            humidity={`${currentLocation.current.humidity} %`}
-            visibility={`${currentLocation.current.visibility / 1000} km`}
-            humDetails='Normal 🤙' //Tengo que pasar una prop
-            visDetails='Average 🥺' //Tengo que pasar una prop
+            windStatus={`${windSpeed.toFixed(1)} km/h`}
+            sunrise={realTimeClock(
+              currentLocation.current.sunrise,
+              currentLocation.timezone_offset
+            )}
+            sunset={realTimeClock(
+              currentLocation.current.sunset,
+              currentLocation.timezone_offset
+            )}
+            humidity={currentLocation.current.humidity}
+            visibility={currentLocation.current.visibility}
           ></Highlights>
         </div>
       </div>
